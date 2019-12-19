@@ -1,4 +1,14 @@
+import javax.persistence.*;
 
-public class Student {
+@Entity
+public class Student extends Person{
+	
+	@Id
+	private int idStudent;
+	
+	private int number;
+	
+	private double averageMark;
+	
 
 }

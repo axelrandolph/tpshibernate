@@ -3,13 +3,9 @@ import javax.persistence.*;
 @Entity
 public class Address {
 	
-	private String street;
+	@OneToOne
+	private Person p;
 	
-	private String city;
-	
-	private String State;
-	
-	private int postalCode;
-	
-	private String country;
+	@Id
+	private EmbededIdAdress id;
 }

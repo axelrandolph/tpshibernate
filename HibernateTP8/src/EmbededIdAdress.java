@@ -1,4 +1,4 @@
-import javax.persistence.Id;
+
 
 public class EmbededIdAdress {
 	

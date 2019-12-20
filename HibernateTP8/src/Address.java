@@ -1,11 +1,7 @@
-import javax.persistence.*;
+import javax.persistence.Id;
 
-@Entity
 public class Address {
-	
-	@OneToOne
-	private Person p;
-	
+
 	@Id
 	private EmbededIdAdress id;
 }

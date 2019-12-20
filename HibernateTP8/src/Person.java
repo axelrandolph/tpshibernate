@@ -6,7 +6,6 @@ public class Person {
 	@Id
 	private int idPerson;
 	
-	@OneToOne(mappedBy = )
 	private int idAdress;
 	
 	private String name;

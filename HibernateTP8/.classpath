@@ -2,19 +2,19 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/antlr-2.7.7.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/classmate-1.3.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/hibernate-commons-annotations-5.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/hibernate-core-5.2.11.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/hibernate-search-engine-5.8.0.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/hibernate-search-orm-5.8.0.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/javassist-3.20.0-GA.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/javax.persistence.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/jboss-logging-3.3.0.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/lucene-core-5.5.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/lucene-queryparser-5.5.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/mysql-connector-java-8.0.18.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rando/Documents/Cours DI4/Donatello/TPs Hibernate/Jars/xml-apis-1.3.03.jar"/>
+	<classpathentry kind="lib" path="Jars/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="Jars/classmate-1.3.0.jar"/>
+	<classpathentry kind="lib" path="Jars/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="Jars/hibernate-commons-annotations-5.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="Jars/hibernate-core-5.2.11.Final.jar"/>
+	<classpathentry kind="lib" path="Jars/hibernate-search-engine-5.8.0.Final.jar"/>
+	<classpathentry kind="lib" path="Jars/hibernate-search-orm-5.8.0.Final.jar"/>
+	<classpathentry kind="lib" path="Jars/javassist-3.20.0-GA.jar"/>
+	<classpathentry kind="lib" path="Jars/javax.persistence.jar"/>
+	<classpathentry kind="lib" path="Jars/jboss-logging-3.3.0.Final.jar"/>
+	<classpathentry kind="lib" path="Jars/lucene-core-5.5.4.jar"/>
+	<classpathentry kind="lib" path="Jars/lucene-queryparser-5.5.4.jar"/>
+	<classpathentry kind="lib" path="Jars/mysql-connector-java-8.0.18.jar"/>
+	<classpathentry kind="lib" path="Jars/xml-apis-1.3.03.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

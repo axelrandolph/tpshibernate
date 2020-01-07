@@ -1,9 +1,11 @@
 import javax.persistence.*;
 
-@Entity
+@Entity 
+@Inheritance(strategy  = InheritanceType.JOINED)
 public class Person {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idPerson;
 	
 	private int idAdress;
@@ -15,6 +17,9 @@ public class Person {
 	private String emailAdress;
 	
 	private String status;
+	
+	@OneToOne( cascade = CascadeType.ALL)
+	private Address adr;
 
 	public Person() {}
 	

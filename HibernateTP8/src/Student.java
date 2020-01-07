@@ -1,6 +1,7 @@
 import javax.persistence.*;
 
 @Entity
+@PrimaryKeyJoinColumn(name = "idPerson")	
 public class Student extends Person{
 	
 	

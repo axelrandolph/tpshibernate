@@ -1,6 +1,6 @@
 package Model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -15,7 +15,7 @@ public class EntityOwner {
 	private String address;
 	
 	@OneToMany(mappedBy = "owner")
-	private ArrayList<EntityBoat> boats;
+	private List<EntityBoat> boats;
 	
 	/*Constructors*/
 	public EntityOwner() {}

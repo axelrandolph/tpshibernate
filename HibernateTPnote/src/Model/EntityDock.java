@@ -18,10 +18,10 @@ public class EntityDock {
 	private int nbLocation;
 	
 	@OneToMany(mappedBy = "dock")
-	private ArrayList<EntityBoat> boats;
+	private List<EntityBoat> boats;
 	
 	@OneToMany(mappedBy = "dock")
-	private ArrayList<EntityLocation> locations;
+	private List<EntityLocation> locations;
 	
 	/*Constructors*/
 	public EntityDock() {}

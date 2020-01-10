@@ -1,13 +1,13 @@
 package Model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class EntityBoat {
 
 	/*Attribute*/
@@ -25,7 +25,7 @@ public abstract class EntityBoat {
 	private EntityOwner owner;
 	
 	@OneToMany(mappedBy="boat")
-	private ArrayList<EntityLocation> locations;
+	private List<EntityLocation> locations;
 	/*Constructors*/
 	public EntityBoat(){}
 	

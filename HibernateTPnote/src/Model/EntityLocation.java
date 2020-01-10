@@ -1,14 +1,19 @@
 package Model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class EntityLocation {
 	
+	/*Attribute*/
+	@Id @GeneratedValue
 	private int code;
 	private int size;
 	private EntityBoat boat;
 
+	/*Constructors*/
 	public EntityLocation() {}
 	
 	public EntityLocation(int code, int size, EntityBoat boat) {
@@ -17,6 +22,8 @@ public class EntityLocation {
 		this.size = size;
 		this.boat = boat;
 	}
+	
+	/*Getters & Setters*/
 	public int getCode() {
 		return code;
 	}

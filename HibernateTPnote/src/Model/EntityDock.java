@@ -1,16 +1,27 @@
 package Model;
 
+import java.util.*;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class EntityDock {
 	
 	/*Attribute*/
-	@Id @GeneratedValue
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int code;
 	private int nbLocation;
+	
+	@OneToMany(mappedBy = "dock")
+	private ArrayList<EntityBoat> boats;
+	
+	@OneToMany(mappedBy = "dock")
+	private ArrayList<EntityLocation> locations;
 	
 	/*Constructors*/
 	public EntityDock() {}

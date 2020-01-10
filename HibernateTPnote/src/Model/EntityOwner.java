@@ -1,17 +1,21 @@
 package Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.ArrayList;
+
+import javax.persistence.*;
 
 @Entity
 public class EntityOwner {
 	
 	/*Attribute*/
-	@Id @GeneratedValue
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idOwner;
 	private String name;
 	private String address;
+	
+	@OneToMany(mappedBy = "owner")
+	private ArrayList<EntityBoat> boats;
 	
 	/*Constructors*/
 	public EntityOwner() {}

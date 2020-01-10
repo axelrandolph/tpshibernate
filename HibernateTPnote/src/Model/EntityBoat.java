@@ -1,20 +1,31 @@
 package Model;
 
-import javax.persistence.Entity;
+import java.util.ArrayList;
+
+import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public abstract class EntityBoat {
 
 	/*Attribute*/
-	@Id @GeneratedValue
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idBoat;
+	
+	@ManyToOne
 	private EntityDock dock;
+	
 	private String name;
 	private int weight;
+	
+	@ManyToOne
 	private EntityOwner owner;
 	
+	@OneToMany(mappedBy="boat")
+	private ArrayList<EntityLocation> locations;
 	/*Constructors*/
 	public EntityBoat(){}
 	

@@ -1,10 +1,8 @@
 package Model;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("M")
 public class EntityMotorBoat extends EntityBoat{
 
 	/*Attribute*/

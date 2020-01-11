@@ -19,7 +19,7 @@ public abstract class EntityBoat {
 	private EntityDock dock;
 	
 	private String name;
-	private int weight;
+	private float weight;
 	
 	@ManyToOne
 	private EntityOwner owner;
@@ -29,12 +29,11 @@ public abstract class EntityBoat {
 	/*Constructors*/
 	public EntityBoat(){}
 	
-	public EntityBoat(EntityDock dock,String name, int weight,int idBoat, EntityOwner owner) {
+	public EntityBoat(EntityDock dock,String name, float weight, EntityOwner owner) {
 		
 		this.dock = dock;
 		this.name = name;
 		this.weight = weight;
-		this.idBoat = idBoat;
 		this.owner = owner;
 	}
 	
@@ -51,12 +50,22 @@ public abstract class EntityBoat {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getWeight() {
+	public float getWeight() {
 		return weight;
 	}
-	public void setWeight(int weight) {
+
+	public void setWeight(float weight) {
 		this.weight = weight;
 	}
+
+	public List<EntityLocation> getLocations() {
+		return locations;
+	}
+
+	public void setLocations(List<EntityLocation> locations) {
+		this.locations = locations;
+	}
+
 	public int getIdBoat() {
 		return idBoat;
 	}

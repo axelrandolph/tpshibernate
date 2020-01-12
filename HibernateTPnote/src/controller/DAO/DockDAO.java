@@ -8,11 +8,10 @@ public class DockDAO extends DAO implements IDockDAO{
 
 
 	@Override
-	public EntityDock insertDock(int code,int nbLocation) {
+	public EntityDock insertDock(int nbLocation) {
 
 		
 		EntityDock dock = new EntityDock();
-		dock.setCode(code);
 		dock.setNbLocation(nbLocation);
 		
 		em.getTransaction().begin();

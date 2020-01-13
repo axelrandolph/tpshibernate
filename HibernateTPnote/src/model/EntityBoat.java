@@ -1,13 +1,13 @@
-package Model;
+package model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class EntityBoat {
 
 	/*Attribute*/
@@ -19,22 +19,21 @@ public abstract class EntityBoat {
 	private EntityDock dock;
 	
 	private String name;
-	private int weight;
+	private float weight;
 	
 	@ManyToOne
 	private EntityOwner owner;
 	
 	@OneToMany(mappedBy="boat")
-	private ArrayList<EntityLocation> locations;
+	private List<EntityLocation> locations;
 	/*Constructors*/
 	public EntityBoat(){}
 	
-	public EntityBoat(EntityDock dock,String name, int weight,int idBoat, EntityOwner owner) {
+	public EntityBoat(EntityDock dock,String name, float weight, EntityOwner owner) {
 		
 		this.dock = dock;
 		this.name = name;
 		this.weight = weight;
-		this.idBoat = idBoat;
 		this.owner = owner;
 	}
 	
@@ -51,12 +50,22 @@ public abstract class EntityBoat {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getWeight() {
+	public float getWeight() {
 		return weight;
 	}
-	public void setWeight(int weight) {
+
+	public void setWeight(float weight) {
 		this.weight = weight;
 	}
+
+	public List<EntityLocation> getLocations() {
+		return locations;
+	}
+
+	public void setLocations(List<EntityLocation> locations) {
+		this.locations = locations;
+	}
+
 	public int getIdBoat() {
 		return idBoat;
 	}

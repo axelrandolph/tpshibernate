@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,9 +24,8 @@ public class EntityLocation {
 	/*Constructors*/
 	public EntityLocation() {}
 	
-	public EntityLocation(int code, int size, EntityBoat boat) {
+	public EntityLocation( int size, EntityBoat boat) {
 		
-		this.code = code;
 		this.size = size;
 		this.boat = boat;
 	}

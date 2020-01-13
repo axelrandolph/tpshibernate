@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 import java.util.*;
 
@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -18,17 +19,17 @@ public class EntityDock {
 	private int nbLocation;
 	
 	@OneToMany(mappedBy = "dock")
-	private ArrayList<EntityBoat> boats;
+	private List<EntityBoat> boats;
 	
 	@OneToMany(mappedBy = "dock")
-	private ArrayList<EntityLocation> locations;
+	private List<EntityLocation> locations;
+
 	
 	/*Constructors*/
 	public EntityDock() {}
 	
-	public EntityDock(int code,int nbLocation) {
+	public EntityDock(int nbLocation) {
 		
-		this.code = code;
 		this.nbLocation = nbLocation;
 	}
 	

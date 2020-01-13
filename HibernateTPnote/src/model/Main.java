@@ -8,12 +8,6 @@ public class Main {
 	
 	public static void main(String argv[]) {
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernateTPnote");
-		EntityManager em = emf.createEntityManager();
-		
-		em.getTransaction().begin();
-		
-		em.getTransaction().commit();
 		
 	}
 

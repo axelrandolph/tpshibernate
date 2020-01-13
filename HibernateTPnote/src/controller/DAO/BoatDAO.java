@@ -14,6 +14,12 @@ public class BoatDAO extends DAO implements IBoatDAO{
 		String queryString = "select count(*) from boat where dock = ";
 		return 0;
 	}
+
+	@Override
+	public void insertBoat(EntityDock dock, String name, float weight, EntityOwner owner) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

@@ -20,9 +20,8 @@ public class EntityOwner {
 	/*Constructors*/
 	public EntityOwner() {}
 
-	public EntityOwner(int idOwner,String name, String address) {
+	public EntityOwner(String name, String address) {
 		
-		this.idOwner = idOwner;
 		this.name = name;
 		this.address = address;
 	}

@@ -1,4 +1,4 @@
-package Interfaces;
+package Interfaces.Manager;
 
 public interface IBoatManager {
 

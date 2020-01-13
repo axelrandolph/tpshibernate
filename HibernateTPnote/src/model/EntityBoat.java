@@ -30,7 +30,7 @@ public abstract class EntityBoat {
 	public EntityBoat(){}
 	
 	
-	public EntityBoat(EntityDock dock,String name, int weight, EntityOwner owner) {
+	public EntityBoat(EntityDock dock,String name, float weight, EntityOwner owner) {
 		
 		this.dock = dock;
 		this.name = name;
@@ -54,9 +54,19 @@ public abstract class EntityBoat {
 	public float getWeight() {
 		return weight;
 	}
-	public void setWeight(int weight) {
+
+	public void setWeight(float weight) {
 		this.weight = weight;
 	}
+
+	public List<EntityLocation> getLocations() {
+		return locations;
+	}
+
+	public void setLocations(List<EntityLocation> locations) {
+		this.locations = locations;
+	}
+
 	public int getIdBoat() {
 		return idBoat;
 	}

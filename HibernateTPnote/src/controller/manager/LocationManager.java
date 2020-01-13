@@ -12,7 +12,6 @@ public class LocationManager implements ILocationManager {
 	public EntityLocation CreateLocation(int size, EntityBoat boat) {
 		
 		EntityLocation entityLocation = new EntityLocation();
-		entityLocation = locationDAO.insertLocation(size, boat);
 		
 		return entityLocation;
 	}
@@ -20,7 +19,6 @@ public class LocationManager implements ILocationManager {
 	@Override
 	public void DeleteLocation(EntityLocation location) {
 
-		locationDAO.deleteDock(location);
 	}
 
 }

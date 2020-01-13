@@ -12,15 +12,20 @@ public class DockManager implements IDockManager {
 
 		EntityDock entityDock = new EntityDock(nbLocation);
 		
-		entityDock = DockDAO.insertDock( nbLocation);
+		//entityDock = DockDAO( nbLocation);
 		
 		return entityDock;
 	}
 	@Override
 	public void DeleteDock(EntityDock dock) {
-		DockDAO.deleteDock(dock);
+		//DockDAO.deleteDock(dock);
 
 	}
 	
+	@Override
+	public void countBoat() {
+		
+	
+	}
 	
 }

@@ -1,9 +1,10 @@
 package Interfaces.DAO;
 
+import java.util.List;
+
 import model.EntityDock;
 
-public interface IDockDAO {
+public interface IDockDAO extends IDAO<EntityDock> {
 
-	public EntityDock insertDock(int nbLocation);
-	public void deleteDock(EntityDock dock);
+	List<EntityDock> getAll();
 }

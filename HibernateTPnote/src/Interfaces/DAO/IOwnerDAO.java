@@ -3,7 +3,10 @@ package Interfaces.DAO;
 import model.EntityOwner;
 
 public interface IOwnerDAO {
+	
+	EntityOwner create(EntityOwner entity);
+    void deleteById(int idOwner);
+    EntityOwner searchById(int idOwner);
 
-	public EntityOwner insertDock(String name, String address);
-	public void deleteDock(EntityOwner owner);
+    
 }

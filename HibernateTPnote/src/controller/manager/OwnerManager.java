@@ -12,15 +12,23 @@ public class OwnerManager implements  IOwnerManager{
 
 		EntityOwner entityOwner = new EntityOwner(name,address);
 		
-		entityOwner = ownerDAO.insertDock(name, address);
+		ownerDAO.create(entityOwner);
 		
 		return entityOwner;
 	}
 
 	@Override
-	public void DeleteOwner(EntityOwner owner) {
+	public void DeleteOwner(int idOwner) {
+		
+		ownerDAO.deleteById(idOwner);
+		
+	}
 
-		ownerDAO.deleteDock(owner);
+	@Override
+	public EntityOwner searchOwner(int idOwner) {
+
+		ownerDAO.searchById(idOwner);
+		return null;
 	}
 
 }

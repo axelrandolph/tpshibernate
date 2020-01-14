@@ -1,6 +1,6 @@
 package controller.manager;
 
-import Interfaces.IBoatDAO;
+import Interfaces.DAO.IBoatDAO;
 import model.EntityDock;
 
 public class BoatManager {

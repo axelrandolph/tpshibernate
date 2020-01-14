@@ -8,5 +8,6 @@ public interface IDockManager {
 
     void DeleteDock(EntityDock dock);
 
+	 void countBoat();
 	 
 }

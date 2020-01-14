@@ -6,7 +6,8 @@ import model.EntityLocation;
 
 public interface ILocationManager {
 	
-	EntityLocation CreateLocation(int size, EntityBoat boat);
+	 EntityLocation CreateLocationSail(int size, String nameBoat);
+		public EntityLocation CreateLocationMotor(int size, String nameBoat);
 
 	 void DeleteLocation(EntityLocation location);
 

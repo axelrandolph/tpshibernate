@@ -6,5 +6,7 @@ public interface IOwnerManager {
 
 	   EntityOwner CreateOwner(String name, String address);
 
-	    void DeleteOwner(EntityOwner dock);
+	    void DeleteOwner(int idOwner);
+	    
+	    EntityOwner searchOwner(int idOwner);
 }

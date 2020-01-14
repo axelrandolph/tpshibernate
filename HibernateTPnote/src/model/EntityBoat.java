@@ -30,6 +30,13 @@ public abstract class EntityBoat {
 	public EntityBoat(){}
 	
 	
+
+	public EntityBoat(String name) {
+		
+		this.name = name;
+	
+	}
+	
 	public EntityBoat(EntityDock dock,String name, float weight, EntityOwner owner) {
 		
 		this.dock = dock;

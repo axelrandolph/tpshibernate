@@ -13,11 +13,20 @@ public class SailBoatManager extends BoatManager{
 	public EntitySailBoat createBoat(int idDock, int idOwner, float weight, String name, float sailArea ) throws BoatException {
 		
 		checkWeight(weight);
-		EntityDock dock = dockDAO.getById(idDock);
-		EntityOwner owner = ownerDAO.getById(idOwner);
+		EntityDock dock;
+		EntityOwner owner;
+		EntitySailBoat sailBoat = null;
 		
-		EntitySailBoat sailBoat = new EntitySailBoat( dock, name,  weight,  owner, sailArea);
-		sailDAO.create(sailBoat);
+		try {
+			dock = dockDAO.getById(idDock);
+			owner = ownerDAO.getById(idOwner);
+			sailBoat = new EntitySailBoat( dock, name,  weight,  owner, sailArea);
+			sailDAO.create(sailBoat);
+		} catch (Exception e) {
+			
+			throw new BoatException(e.getMessage());
+		}
+		
 		
 		return sailBoat;	
 		

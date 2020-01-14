@@ -6,5 +6,5 @@ import model.EntityDock;
 
 public interface IDockDAO extends IDAO<EntityDock> {
 
-	List<EntityDock> getAll();
+	int countBoatByDock(EntityDock dock);
 }

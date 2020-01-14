@@ -7,42 +7,10 @@ import model.EntityBoat;
 import model.EntityDock;
 import model.EntityOwner;
 
-public class BoatDAO extends DAO implements IBoatDAO{
-
-	
-	@Override
-	public int countBoatByDock(EntityDock dock) {
-		
-		String queryString = "select count(*) from boat where dock = ";
-		return 0;
-	}
+public abstract class BoatDAO extends DAO<EntityBoat> implements IBoatDAO{
 
 	@Override
-	public void insertBoat(EntityDock dock, String name, float weight, EntityOwner owner) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Object create(Object entity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void delete(Object entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteById(int entityId) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Object getById(int id) {
+	public EntityBoat getById(int id) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -53,6 +21,11 @@ public class BoatDAO extends DAO implements IBoatDAO{
 		return null;
 	}
 	
-	
+	@Override
+	public EntityBoat create(EntityBoat entity) throws Exception {
+		
+		throw new Exception("impossible de créer un bateau à partir de cette classe");
+	}
+
 
 }

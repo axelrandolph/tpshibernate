@@ -3,23 +3,20 @@ package controller.DAO;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import Interfaces.DAO.ILocationDAO;
 import model.EntityBoat;
 import model.EntityLocation;
+import model.EntitySailBoat;
 
-public class LocationDao extends DAO<EntityLocation> implements ILocationDAO {
+public class LocationDAO extends DAO<EntityLocation> implements ILocationDAO {
 
-	public LocationDao(EntityManager em) {
+	public LocationDAO(EntityManager em) {
 		super(em);
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public EntityLocation create(EntityLocation entity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void delete(EntityLocation entity) {
@@ -27,10 +24,6 @@ public class LocationDao extends DAO<EntityLocation> implements ILocationDAO {
 		
 	}
 
-	@Override
-	public void deleteById(int entityId) {
-		// TODO Auto-generated method stub
-	}
 
 	@Override
 	public EntityLocation getById(int id) {
@@ -40,8 +33,11 @@ public class LocationDao extends DAO<EntityLocation> implements ILocationDAO {
 
 	@Override
 	public List<EntityLocation> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<EntityLocation> listLocation = null;
+		Query query = em.createQuery("select * from EntityLocation");
+		listLocation = query.getResultList();
+		
+		return listLocation;
 	}
 
 }

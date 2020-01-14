@@ -1,8 +1,8 @@
 package exceptions;
 
-public class BoatException extends Exception {
-
-	public BoatException(String msg) {
+public class OwnerException extends Exception {
+	
+	public OwnerException(String msg) {
 		super(msg);
 	}
 	
@@ -10,4 +10,5 @@ public class BoatException extends Exception {
 	public String getMessage() {
 		return super.getMessage();
 	}
+
 }

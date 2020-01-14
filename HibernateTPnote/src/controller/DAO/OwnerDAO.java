@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import Interfaces.DAO.IOwnerDAO;
+import exceptions.OwnerException;
 import model.EntityOwner;
 import javax.persistence.Query;
 
@@ -13,68 +14,38 @@ public class OwnerDAO extends DAO<EntityOwner> implements IOwnerDAO {
 
 	public OwnerDAO(EntityManager em) {
 		super(em);
-		// TODO Auto-generated constructor stub
 	}
 
+
 	@Override
-	public EntityOwner create(EntityOwner entity) {
+	public void delete(EntityOwner entity) throws Exception {
 		
-		em.getTransaction().begin();
-		em.persist(entity);
-		em.getTransaction().commit();
+		EntityOwner owner = em.find(EntityOwner.class, entity.getIdOwner());
+		if(owner == null) {
+			throw new Exception("Impossible de récupérer le propriétaire de cet identifiant");
+		}
+		em.remove(owner);
 		
-		return entity;
-	}
-
-
-	@Override
-	public void delete(EntityOwner entity) {
-
-		try {
-			EntityOwner owner = em.find(EntityOwner.class, entity.getIdOwner());
-			em.remove(owner);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
 	}
 
 	@Override
-	public void deleteById(int entityId) {
-		try {
-			EntityOwner owner = em.find(EntityOwner.class, entityId);
-			em.remove(owner);
-		} catch (Exception e) {
-			e.printStackTrace();
+	public EntityOwner getById(int idOwner) throws Exception {
+		EntityOwner owner = null;
+		owner = em.find(EntityOwner.class, idOwner);
+		if (owner == null) {
+			throw new Exception("aucun propriétaire de trouver avec cet identifiant");
 		}
-
-	}
-
-	@Override
-	public EntityOwner getById(int idOwner) {
-		try {
-			EntityOwner owner = em.find(EntityOwner.class, idOwner);
-			return owner;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-
+		return owner;
 	}
 
 	@Override
 	public List<EntityOwner> getAll() {
 		
-		List<EntityOwner> listOwner = new ArrayList<EntityOwner>();
+		List<EntityOwner> listOwner = null;
+		Query query = em.createQuery("select * from entityowner");
+		listOwner = query.getResultList();
 		
-		try {
-			Query query = em.createQuery("from entityowner");
-			listOwner = query.getResultList();
-			return listOwner;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
+		return listOwner;
 	}
 
 

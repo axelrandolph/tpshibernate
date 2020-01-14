@@ -1,12 +1,13 @@
 package Interfaces.Manager;
 
+import exceptions.OwnerException;
 import model.EntityOwner;
 
 public interface IOwnerManager {
 
-	   EntityOwner CreateOwner(String name, String address);
+	   EntityOwner CreateOwner(String name, String address) throws OwnerException;
 
-	    void DeleteOwner(int idOwner);
+	    void DeleteOwner(int idOwner) throws OwnerException;
 	    
-	    EntityOwner searchOwner(int idOwner);
+	    EntityOwner searchOwner(int idOwner) throws OwnerException;
 }

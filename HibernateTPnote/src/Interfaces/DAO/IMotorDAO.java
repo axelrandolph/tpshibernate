@@ -1,5 +1,7 @@
 package Interfaces.DAO;
 
-public interface IMotorDAO extends IBoatDAO{
+import model.EntityMotorBoat;
+
+public interface IMotorDAO extends IDAO<EntityMotorBoat>{
 
 }

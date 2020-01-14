@@ -21,27 +21,49 @@ public class LocationManager implements ILocationManager {
 	public EntityLocation createLocation(int size, int idDock) throws LocationException {
 		
 		checkSize(size);
-		EntityDock dock = dockDAO.getById(idDock);
-		EntityLocation location = new EntityLocation(size, dock);
-		locationDAO.create(location);
+		EntityDock dock;
+		EntityLocation location = null;
+		try {
+			dock = dockDAO.getById(idDock);
+			location = new EntityLocation(size, dock);
+			locationDAO.create(location);
+		} catch (Exception e) {
+			throw new LocationException(e.getMessage());
+
+		}
+		
 
 		return location;
 	}
 	
 	@Override
-	public void attachBoat(int idLocation, int idBoat) {
+	public void attachBoat(int idLocation, int idBoat) throws LocationException {
 		
-		EntityLocation location = locationDAO.getById(idLocation);
-		EntityBoat boat = boatDAO.getById(idBoat);
-		location.setBoat(boat);
-		locationDAO.update(location);
+		EntityLocation location;
+		EntityBoat boat; 
+		
+		try {
+			location = locationDAO.getById(idLocation);
+			boat = boatDAO.getById(idBoat);
+			location.setBoat(boat);
+			locationDAO.update(location);
+		} catch (Exception e) {
+			throw new LocationException(e.getMessage());
+		}
+		
 	}
 
 	@Override
-	public void deleteLocation(int idLocation) {
+	public void deleteLocation(int idLocation) throws LocationException {
 		
-		EntityLocation location = locationDAO.getById(idLocation);
-		locationDAO.delete(location);
+		EntityLocation location;
+		try {
+			location = locationDAO.getById(idLocation);
+			locationDAO.delete(location);
+		} catch (Exception e) {
+			throw new LocationException(e.getMessage());
+		}
+		
 
 	}
 	

@@ -2,47 +2,46 @@ package controller.DAO;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import Interfaces.DAO.IBoatDAO;
 import Interfaces.DAO.ISailDAO;
+import model.EntityBoat;
 import model.EntityDock;
 import model.EntityOwner;
+import model.EntitySailBoat;
 
-public class SailDAO extends DAO implements ISailDAO{
+public class SailDAO extends DAO<EntitySailBoat> implements ISailDAO{
+
+	@Override
+	public void delete(EntitySailBoat entity) throws Exception {
+		EntityOwner sailboat = em.find(EntityOwner.class, entity.getIdBoat());
+		if(sailboat == null) {
+			throw new Exception("Impossible de récupérer le propriétaire de cet identifiant");
+		}
+		em.remove(sailboat);
+	}
 
 
-	public void insertBoat(EntityDock dock, String name, float weight, EntityOwner owner) {
-		// TODO Auto-generated method stub
+	@Override
+	public EntitySailBoat getById(int id) throws Exception {
+		EntitySailBoat sailboat = null;
+		sailboat = em.find(EntitySailBoat.class, id);
+		if (sailboat == null) {
+			throw new Exception("aucun propriétaire de trouver avec cet identifiant");
+		}
+		return sailboat;
+	}
+
+	@Override
+	public List<EntitySailBoat> getAll() {
+
+		List<EntitySailBoat> listSailBoat = null;
+		Query query = em.createQuery("select * from entitysailboat");
+		listSailBoat = query.getResultList();
 		
-	}
-
-	@Override
-	public Object create(Object entity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void delete(Object entity) {
-		// TODO Auto-generated method stub
+		return listSailBoat;
 		
-	}
-
-	@Override
-	public void deleteById(int entityId) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Object getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List getAll() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	
 	

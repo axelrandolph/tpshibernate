@@ -5,5 +5,4 @@ import model.EntityLocation;
 
 public interface ILocationDAO extends IDAO<EntityLocation> {
 
-	public EntityLocation create(EntityLocation entity);
 }

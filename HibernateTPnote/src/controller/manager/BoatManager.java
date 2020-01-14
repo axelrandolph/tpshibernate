@@ -14,16 +14,6 @@ public class BoatManager {
 	protected IDockDAO dockDAO;
 	protected IOwnerDAO ownerDAO;
 	
-	public int countBoatByDock(EntityDock dock) {
-		
-		return boatDAO.countBoatByDock(dock);
-	}
-	
-	
-	public void deleteBoat() {
-		
-	}
-	
 
 	protected void checkWeight(float weight) throws BoatException {
 		if(weight > 100) {

@@ -23,9 +23,9 @@ public class DockManager implements IDockManager {
 	}
 	
 	@Override
-	public void countBoat() {
+	public int countBoatByDock(EntityDock dock) {
 		
-	
+		return DockDAO.countBoatByDock(dock);
 	}
 	
 }

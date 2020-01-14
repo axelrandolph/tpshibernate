@@ -8,12 +8,13 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 
 import Interfaces.DAO.IDAO;
+import exceptions.OwnerException;
+import model.EntityOwner;
 
 	
 	
 public abstract class DAO<T> implements IDAO<T>{
  
-	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernateTPnote");
 	@PersistenceContext
 	protected  EntityManager em;
 	
@@ -22,20 +23,38 @@ public abstract class DAO<T> implements IDAO<T>{
 	}
 	
 	public DAO() {
-		emf = Persistence.createEntityManagerFactory("HibernateTPnote");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernateTPnote");
 		em = emf.createEntityManager();
 	}
 	
 	
-	public abstract T create(T entity);
-
-
-	public abstract void delete(T entity);
-
-	public abstract void deleteById(int entityId);
 	
-	public abstract T getById(int id);
 
+	@Override
+	public T update(T entity) {
+		em.getTransaction().begin();
+		em.merge(entity);
+		em.getTransaction().commit();
+		return entity;
+		
+	}
+
+	@Override
+	public T create(T entity) throws Exception {
+		
+		em.getTransaction().begin();
+		em.persist(entity);
+		em.getTransaction().commit();
+		return entity;
+	}
+
+	@Override
+	public abstract void delete(T entity) throws Exception;
+
+	@Override
+	public abstract T getById(int id) throws Exception;
+
+	@Override
 	public abstract List<T> getAll();
 
 	

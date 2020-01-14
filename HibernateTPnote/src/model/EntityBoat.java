@@ -1,5 +1,8 @@
 package model;
 
+/*REGEX
+ * weight <= 100 tones
+ */
 import java.util.List;
 
 import javax.persistence.*;
@@ -13,19 +16,19 @@ public abstract class EntityBoat {
 	/*Attribute*/
 	@Id 
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int idBoat;
+	protected int idBoat;
 	
 	@ManyToOne
-	private EntityDock dock;
+	protected EntityDock dock;
 	
-	private String name;
-	private float weight;
+	protected String name;
+	protected float weight;
 	
 	@ManyToOne
-	private EntityOwner owner;
+	protected EntityOwner owner;
 	
 	@OneToMany(mappedBy="boat")
-	private List<EntityLocation> locations;
+	protected List<EntityLocation> locations;
 	/*Constructors*/
 	public EntityBoat(){}
 	

@@ -6,7 +6,7 @@ public interface IOwnerDAO {
 	
 	EntityOwner create(EntityOwner entity);
     void deleteById(int idOwner);
-    EntityOwner searchById(int idOwner);
+    EntityOwner getById(int idOwner);
 
     
 }

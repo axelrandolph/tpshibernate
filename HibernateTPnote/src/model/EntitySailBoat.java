@@ -11,9 +11,11 @@ public class EntitySailBoat extends EntityBoat {
 	/*Constructors*/
 	public EntitySailBoat() {}
 	
-	public EntitySailBoat(float sailArea) {
+	public EntitySailBoat(EntityDock dock,String name, float weight, EntityOwner owner, float area) {
+		super( dock, name,  weight,  owner);
 		this.sailArea = sailArea;	
 	}
+	
 	
 	/*Getters & Setters*/
 	public float getSailArea() {

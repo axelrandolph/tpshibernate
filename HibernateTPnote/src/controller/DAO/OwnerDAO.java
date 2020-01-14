@@ -51,7 +51,7 @@ public class OwnerDAO extends DAO<EntityOwner> implements IOwnerDAO {
 	}
 
 	@Override
-	public EntityOwner searchById(int idOwner) {
+	public EntityOwner getById(int idOwner) {
 		try {
 			EntityOwner owner = em.find(EntityOwner.class, idOwner);
 			return owner;

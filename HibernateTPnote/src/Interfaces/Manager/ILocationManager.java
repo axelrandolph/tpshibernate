@@ -1,14 +1,17 @@
 package Interfaces.Manager;
 
+import exceptions.LocationException;
 import model.EntityBoat;
 
 import model.EntityLocation;
 
 public interface ILocationManager {
 	
-	 EntityLocation CreateLocationSail(int size, String nameBoat);
-		public EntityLocation CreateLocationMotor(int size, String nameBoat);
-
-	 void DeleteLocation(EntityLocation location);
-
+	public EntityLocation createLocation(int size, int idDock) throws LocationException;
+	
+	public void attachBoat(int idLocation, int idBoat);
+	
+	public void deleteLocation(int idLocation);
+	
+	
 }

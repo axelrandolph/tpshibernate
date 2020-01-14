@@ -36,7 +36,7 @@ public class DockDAO extends DAO<EntityDock> implements IDockDAO{
 	}
 
 	@Override
-	public EntityDock searchById(int id) {
+	public EntityDock getById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

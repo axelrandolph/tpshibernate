@@ -1,5 +1,9 @@
 package model;
 
+/*REGEX 
+ * size <= 200 m²
+ */
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,14 +28,14 @@ public class EntityLocation {
 	/*Constructors*/
 	public EntityLocation() {}
 	
-	public EntityLocation( int size, EntityBoat boat) {
+	public EntityLocation( int size, EntityDock dock) {
 		
 		this.size = size;
-		this.boat = boat;
+		this.dock = dock;
+		this.boat = null;
 	}
 	
 
-	
 	/*Getters & Setters*/
 	public int getCode() {
 		return code;

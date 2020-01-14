@@ -33,7 +33,7 @@ public class LocationDao extends DAO<EntityLocation> implements ILocationDAO {
 	}
 
 	@Override
-	public EntityLocation searchById(int id) {
+	public EntityLocation getById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

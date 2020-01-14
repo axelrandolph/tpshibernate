@@ -27,7 +27,7 @@ public class OwnerManager implements  IOwnerManager{
 	@Override
 	public EntityOwner searchOwner(int idOwner) {
 
-		ownerDAO.searchById(idOwner);
+		ownerDAO.getById(idOwner);
 		return null;
 	}
 

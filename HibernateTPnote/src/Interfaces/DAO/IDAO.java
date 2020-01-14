@@ -11,9 +11,11 @@ public interface IDAO<T> {
 
 	public abstract void deleteById(int entityId);
 	
-	public abstract T searchById(int id);
+	public abstract T getById(int id);
 
 	public abstract List<T> getAll();
+	
+	public abstract void update(T entity);
 }
 
 

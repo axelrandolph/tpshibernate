@@ -3,7 +3,7 @@ package Interfaces.DAO;
 import model.EntityDock;
 import model.EntityOwner;
 
-public interface ISailDAO {
+public interface ISailDAO extends IBoatDAO{
 	
 
 

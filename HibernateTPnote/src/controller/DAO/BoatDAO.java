@@ -42,7 +42,7 @@ public class BoatDAO extends DAO implements IBoatDAO{
 	}
 
 	@Override
-	public Object searchById(int id) {
+	public Object getById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

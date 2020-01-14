@@ -14,7 +14,6 @@ import Interfaces.DAO.IDAO;
 public abstract class DAO<T> implements IDAO<T>{
  
 	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernateTPnote");
-	//EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernateTPnote");
 	@PersistenceContext
 	protected  EntityManager em;
 	
@@ -35,7 +34,7 @@ public abstract class DAO<T> implements IDAO<T>{
 
 	public abstract void deleteById(int entityId);
 	
-	public abstract T searchById(int id);
+	public abstract T getById(int id);
 
 	public abstract List<T> getAll();
 

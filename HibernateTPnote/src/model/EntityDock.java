@@ -1,5 +1,8 @@
 package model;
 
+/* REGEX
+ * nb location max = 300
+ */
 import java.util.*;
 
 import javax.persistence.Entity;

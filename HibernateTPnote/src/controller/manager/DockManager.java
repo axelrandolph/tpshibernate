@@ -2,13 +2,19 @@ package controller.manager;
 
 import Interfaces.DAO.IDockDAO;
 import Interfaces.Manager.IDockManager;
+import controller.DAO.DockDAO;
 import model.EntityDock;
 
-public class DockManager implements IDockManager {
+public class DockManager extends ConnexionManager implements IDockManager {
 
-	private IDockDAO DockDAO;
+	private IDockDAO dockDAO;
+	
+	public DockManager() {
+		super();
+		dockDAO = new DockDAO(em);
+	}
 	@Override
-	public EntityDock CreateDock(int nbLocation) {
+	public EntityDock createDock(int nbLocation) {
 
 		EntityDock entityDock = new EntityDock(nbLocation);
 		
@@ -25,7 +31,7 @@ public class DockManager implements IDockManager {
 	@Override
 	public int countBoatByDock(EntityDock dock) {
 		
-		return DockDAO.countBoatByDock(dock);
+		return dockDAO.countBoatByDock(dock);
 	}
 	
 }

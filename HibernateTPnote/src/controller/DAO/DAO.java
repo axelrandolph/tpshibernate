@@ -22,12 +22,6 @@ public abstract class DAO<T> implements IDAO<T>{
 		this.em = em;
 	}
 	
-	public DAO() {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernateTPnote");
-		em = emf.createEntityManager();
-	}
-	
-	
 	
 
 	@Override

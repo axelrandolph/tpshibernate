@@ -4,17 +4,27 @@ import Interfaces.DAO.IBoatDAO;
 import Interfaces.DAO.IDockDAO;
 import Interfaces.DAO.ILocationDAO;
 import Interfaces.Manager.ILocationManager;
+import controller.DAO.BoatDAO;
+import controller.DAO.DockDAO;
+import controller.DAO.LocationDAO;
 import exceptions.LocationException;
 import model.EntityBoat;
 import model.EntityDock;
 import model.EntityLocation;
 import model.EntitySailBoat;
 
-public class LocationManager implements ILocationManager {
+public class LocationManager extends ConnexionManager implements ILocationManager {
 
 	private ILocationDAO locationDAO;
 	private IDockDAO dockDAO;
 	private IBoatDAO boatDAO;
+	
+	public LocationManager() {
+		super();
+		locationDAO = new LocationDAO(em);
+		dockDAO = new DockDAO(em);
+		boatDAO = new BoatDAO(em);
+	}
 	
 	
 	@Override

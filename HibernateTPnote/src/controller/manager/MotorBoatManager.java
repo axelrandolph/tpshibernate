@@ -1,6 +1,7 @@
 package controller.manager;
 
 import Interfaces.DAO.IMotorDAO;
+import controller.DAO.MotorDAO;
 import exceptions.BoatException;
 import model.EntityDock;
 import model.EntityMotorBoat;
@@ -9,6 +10,11 @@ import model.EntityOwner;
 public class MotorBoatManager extends BoatManager{
 	
 	private IMotorDAO motorboatDAO;
+	
+	public MotorBoatManager() {
+		super();
+		motorboatDAO = new MotorDAO(em);
+	}
 	
 	public EntityMotorBoat createBoat(int idDock, int idOwner, float weight, String name, int nbHorsePower ) throws BoatException {
 		

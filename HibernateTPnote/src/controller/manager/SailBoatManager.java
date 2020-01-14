@@ -1,6 +1,7 @@
 package controller.manager;
 
 import Interfaces.DAO.ISailDAO;
+import controller.DAO.SailDAO;
 import exceptions.BoatException;
 import model.EntityDock;
 import model.EntityOwner;
@@ -9,6 +10,11 @@ import model.EntitySailBoat;
 public class SailBoatManager extends BoatManager{
 	
 	private ISailDAO sailDAO;
+	
+	public SailBoatManager() {
+		super();
+		sailDAO = new SailDAO(em);
+	}
 	
 	public EntitySailBoat createBoat(int idDock, int idOwner, float weight, String name, float sailArea ) throws BoatException {
 		

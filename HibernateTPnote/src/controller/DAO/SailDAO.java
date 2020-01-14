@@ -2,6 +2,7 @@ package controller.DAO;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import Interfaces.DAO.IBoatDAO;
@@ -12,6 +13,11 @@ import model.EntityOwner;
 import model.EntitySailBoat;
 
 public class SailDAO extends DAO<EntitySailBoat> implements ISailDAO{
+
+	public SailDAO(EntityManager em) {
+		super(em);
+	}
+
 
 	@Override
 	public void delete(EntitySailBoat entity) throws Exception {

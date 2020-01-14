@@ -4,7 +4,7 @@ import model.EntityDock;
 
 public interface IDockManager {
 
-    EntityDock CreateDock(int nbLocation);
+    EntityDock createDock(int nbLocation);
 
     void DeleteDock(EntityDock dock);
 

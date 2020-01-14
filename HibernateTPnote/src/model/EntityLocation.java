@@ -30,6 +30,8 @@ public class EntityLocation {
 		this.boat = boat;
 	}
 	
+
+	
 	/*Getters & Setters*/
 	public int getCode() {
 		return code;

@@ -44,28 +44,4 @@ public class LocationDao extends DAO<EntityLocation> implements ILocationDAO {
 		return null;
 	}
 
-
-/*	@Override
-	public EntityLocation insertLocation(int size, EntityBoat boat) {
-
-		EntityLocation location = new EntityLocation();
-		location.setSize(size);
-		location.setBoat(boat);
-		
-		em.getTransaction().begin();
-		em.persist(location);
-		em.getTransaction().commit();
-		
-		return location;
-	}
-
-	@Override
-	public void deleteDock(EntityLocation location) {
-
-		location = em.find(EntityLocation.class, location.getCode());
-		em.getTransaction().begin();
-		em.remove(location);
-		em.getTransaction().commit();
-	}
-*/
 }
